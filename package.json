@@ -1,7 +1,7 @@
 {
-  "name": "rsuite-admin-template",
+  "name": "kan-store",
   "version": "1.0.0",
-  "description": "RSUITE Management System",
+  "description": "KAN Store",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib/"
