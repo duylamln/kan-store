@@ -20,8 +20,6 @@ const REACT_APP_PARSE_HOST_URL = "https://parseapi.back4app.com/";
 const REACT_APP_PARSE_JAVASCRIPT_KEY =
   "pefuwnCnc58ge4wCwhLX0duMdgVCDm4xeF50tzzO";
 
-console.log("env: ", process?.env);
-
 Parse.initialize(
   REACT_APP_PARSE_APPLICATION_ID,
   REACT_APP_PARSE_JAVASCRIPT_KEY,
