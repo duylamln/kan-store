@@ -33,7 +33,7 @@ export default function ProductEdit() {
   const selectedProduct = useProductStore(state => state.selectedProduct);
   const setSelectedProduct = useProductStore(state => state.setSelectedProduct);
 
-  const [formData, setFormData] = useState<Product | Record<string, any>>();
+  const [formValue, setFormValue] = useState<Product | Record<string, any>>();
   const [formDefaultValue, setFormDefaultValue] = useState<
     Product | Record<string, any>
   >();
@@ -53,7 +53,7 @@ export default function ProductEdit() {
     setIsSaving(true);
 
     try {
-      await createOrUpdateProduct(formData as Product);
+      await createOrUpdateProduct(formValue as Product);
       setOpen(false);
     } catch (error) {
       setError((error as Error).message);
@@ -70,6 +70,7 @@ export default function ProductEdit() {
     if (selectedProduct) {
       setOpen(true);
       setFormDefaultValue({ ...selectedProduct });
+      setFormValue({ ...selectedProduct });
     } else {
       setOpen(false);
     }
@@ -92,7 +93,7 @@ export default function ProductEdit() {
           onSubmit={handleSubmit}
           ref={formRef}
           formDefaultValue={formDefaultValue}
-          onChange={setFormData}
+          onChange={setFormValue}
         >
           <TextField name="name" label="Product name"></TextField>
           <Stack
@@ -120,7 +121,7 @@ export default function ProductEdit() {
           </Stack>
           <TextField
             name="thumbnail"
-            label="Thumbnal"
+            label="Thumbnail"
             subLabel="This is a link starts with: 'http://'"
           ></TextField>
           <Form.Group>

@@ -3,6 +3,7 @@ import { Table, DOMHelper, Pagination } from "rsuite";
 import ProductsToolbar from "./ProductsToolbar";
 import useProductStore from "@/store/useProductStore";
 import ProductActions from "./ProductActions";
+import { ImageCell } from "@/components/Cells";
 
 const { Column, HeaderCell, Cell } = Table;
 const { getHeight } = DOMHelper;
@@ -24,20 +25,25 @@ export default function Products() {
           <Cell dataKey="id" />
         </Column>
 
-        <Column minWidth={160} flexGrow={1}>
-          <HeaderCell>Name</HeaderCell>
-          <Cell dataKey="name" />
+        <Column width={50}>
+          <HeaderCell>{""}</HeaderCell>
+          <ImageCell dataKey="thumbnail"></ImageCell>
         </Column>
 
-        <Column width={300} flexGrow={2}>
+        <Column minWidth={200} flexGrow={1}>
+          <HeaderCell>Name</HeaderCell>
+          <Cell dataKey="name"></Cell>
+        </Column>
+
+        <Column width={200} flexGrow={1}>
           <HeaderCell>Description</HeaderCell>
           <Cell dataKey="description" />
         </Column>
-        <Column width={300}>
+        <Column width={100}>
           <HeaderCell>Price</HeaderCell>
           <Cell dataKey="price" />
         </Column>
-        <Column width={300}>
+        <Column width={100}>
           <HeaderCell>Stock</HeaderCell>
           <Cell dataKey="stock" />
         </Column>

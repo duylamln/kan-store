@@ -45,14 +45,17 @@ export const ImageCell = ({ rowData, dataKey, ...props }: CellProps) => (
       style={{
         width: 40,
         height: 40,
-        background: "#f5f5f5",
         borderRadius: 6,
         marginTop: 2,
         overflow: "hidden",
         display: "inline-block",
       }}
     >
-      <img src={rowData[dataKey!]} width="40" />
+      <img
+        src={rowData[dataKey as string]}
+        alt={rowData[dataKey as string]}
+        width="40"
+      />
     </div>
   </Cell>
 );

@@ -69,6 +69,7 @@ const CustomerEdit = () => {
     if (selectedCustomer) {
       setOpen(true);
       setFormDefaultValue({ ...selectedCustomer });
+      setFormData({ ...selectedCustomer });
     } else {
       setOpen(false);
     }
